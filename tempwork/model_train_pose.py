@@ -349,7 +349,7 @@ if __name__ == '__main__':
     physical_devices = tf.config.list_physical_devices('GPU')
     tf.config.experimental.set_memory_growth(physical_devices[0], True)
 
-    dataset_csv_file = './datasets/numerical_coords_dataset.csv'
+    dataset_csv_file = 'numerical_coords_dataset.csv'
     target_value = 'class'
     all_model = './model_weights/all_model/08.31_xyzv/3_categories_pose' # all_model: Model struct and model weights.
 
@@ -393,7 +393,7 @@ if __name__ == '__main__':
     tflite_model = converter.convert()
 
     # Save the model.
-    with open('model.tflite', 'wb') as f:
+    with open('mmodel.tflite', 'wb') as f:
         f.write(tflite_model)
 
     print('TFLite Model save done!')
